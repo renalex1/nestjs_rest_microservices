@@ -18,6 +18,11 @@ const ENV = config({ path: envFilePath }).parsed;
         transport: Transport.TCP,
         options: { port: +ENV.ANALYTICS_PORT || 3001 },
       },
+      {
+        name: 'POSTS',
+        transport: Transport.TCP,
+        options: { port: +ENV.POSTS_PORT || 3001 },
+      },
     ]),
   ],
   controllers: [AppController],

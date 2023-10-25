@@ -13,14 +13,14 @@ async function bootstrap() {
   app.connectMicroservice({
     transport: Transport.TCP,
     options: {
-      port: ENV.ANALYTICS_PORT || 3001,
+      port: ENV.POSTS_PORT || 3002,
     },
   });
 
   await app.startAllMicroservices();
-  await app.listen(ENV.ANALYTICS_PORT || 3001);
+  await app.listen(ENV.POSTS_PORT || 3001);
 
   console.log(`
-  🚀 Nest.js REST Microservice - Analytics - , launched at http://${ENV.ANALYTICS_HOST}:${ENV.ANALYTICS_PORT}`);
+  🚀 Nest.js REST Microservice - Posts - , launched at http://${ENV.POSTS_HOST}:${ENV.POSTS_PORT}`);
 }
 bootstrap();

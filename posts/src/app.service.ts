@@ -1,25 +1,22 @@
 import { Injectable } from '@nestjs/common';
-import { CreateUserEvent } from './event/create-user.event';
+import { CreatePostEvent } from './event/create-post.event';
 
 @Injectable()
 export class AppService {
-  private readonly analytics: any[] = [];
+  private readonly posts: any[] = [];
 
   getHello(): string {
     return 'Hello World!';
   }
 
-  handelUserCreated(data: CreateUserEvent) {
-    console.log('handelUserCreated - ANALYTICS ', data);
+  handelPostCreated(data: CreatePostEvent) {
+    console.log('handelPostCreated - POSTS ', data);
 
-    this.analytics.push({
-      email: data.email,
-      password: data.password,
-      timestamp: new Date(),
+    this.posts.push({
+      id: data.id,
+      title: data.title,
+      body: data.body,
+      authorId: data.authorId,
     });
-  }
-
-  getAnalytics() {
-    return this.analytics;
   }
 }

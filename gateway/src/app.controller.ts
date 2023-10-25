@@ -1,6 +1,7 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { AppService } from './app.service';
 import { CreateUserRequest } from './dto/create-user-request';
+import { CreatePostRequest } from './dto/create-post-request';
 
 @Controller()
 export class AppController {
@@ -19,5 +20,10 @@ export class AppController {
   @Get('analytics')
   getAnalytics() {
     return this.appService.getAnalytics();
+  }
+
+  @Post('post')
+  createPost(@Body() createPostRequest: CreatePostRequest) {
+    this.appService.createPost(createPostRequest);
   }
 }
