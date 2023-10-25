@@ -43,13 +43,21 @@ export class AppService {
         createPostRequest.authorId,
       ),
     );
-    // this.analyticsClient.emit(
-    //   'user_created',
-    //   new CreateUserEvent(createUserRequest.email, createUserRequest.password),
-    // );
+    this.analyticsClient.emit(
+      'post_created',
+      new CreatePostEvent(
+        createPostRequest.id,
+        createPostRequest.title,
+        createPostRequest.body,
+        createPostRequest.authorId,
+      ),
+    );
   }
 
   getAnalytics() {
     return this.analyticsClient.send({ cmd: 'get_analytics' }, {});
+  }
+  getAnalyticsPosts() {
+    return this.analyticsClient.send({ cmd: 'get_analytics_posts' }, {});
   }
 }

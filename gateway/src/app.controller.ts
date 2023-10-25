@@ -26,4 +26,9 @@ export class AppController {
   createPost(@Body() createPostRequest: CreatePostRequest) {
     this.appService.createPost(createPostRequest);
   }
+
+  @Get('analytics_posts')
+  getAnalyticsPosts() {
+    return this.appService.getAnalyticsPosts();
+  }
 }
