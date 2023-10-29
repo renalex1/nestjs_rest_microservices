@@ -26,7 +26,15 @@
 
 ### Node.js REST API Microservices With Nest.js
 
-To run the app 
+## Installation
+
+```bash
+$ npm install
+```
+
+## Running the microservices
+
+To run the app
 You can run all using
 
 ```bash
@@ -51,16 +59,7 @@ $ npm run gateway:start
 
 To see endpoints of Microservices, just go http://localhost:3000/api/docs#/
 
-
-
-
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
-
-```bash
-$ npm install
-```
 
 ## Running the app
 
